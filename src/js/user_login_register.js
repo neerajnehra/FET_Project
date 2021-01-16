@@ -76,6 +76,24 @@ function register() {
       var errorMessage = error.message;
       // ..
     });
+  var user = {
+      "id": 1,
+      "name" : uname,
+      "email": uemail,
+      "password": upassword,
+      "contact" : ucontact
+    }
+    $.ajax({
+      url: "http://localhost:3000/db/user",
+      type: "POST",
+      dataType: "json",
+      contentType: "application/json",
+      success: (cat) => {
+        cat.append(user)
+        console.log("Success")
+      },
+
+  });
 
 }
 
